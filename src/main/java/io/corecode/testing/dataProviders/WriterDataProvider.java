@@ -1,6 +1,8 @@
 package io.corecode.testing.dataProviders;
 
-import io.corecode.testing.staticVariables.WritersList;
+import com.google.gson.Gson;
+import io.corecode.testing.model.Writer;
+import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 public class WriterDataProvider {
 
+
+    private static List<Integer> writersAdded= new ArrayList<Integer>();
     private int limit = 2;
 
     @DataProvider(name = "getWriters")
@@ -26,20 +30,27 @@ public class WriterDataProvider {
     @DataProvider(name = "getUpdateWriters")
     public Iterator<Object[]> getUpdateWritersAdded() {
         Collection<Object[]> data = new ArrayList<>();
-        for (int i = 0; i < WritersList.getWriterAdded().size(); i++){
+        for (int i = 0; i < writersAdded.size(); i++){
             JSONObject bodyContent = new JSONObject();
             bodyContent.put("name","writer qa update test "+i);
-            data.add(new Object[]{WritersList.getWriterAdded().get(i),bodyContent.toString()});
+            data.add(new Object[]{writersAdded.get(i),bodyContent.toString()});
         }
         return data.iterator();
     }
     @DataProvider(name = "getWritersAdded")
     public Iterator<Object[]> getWritersAdded() {
         Collection<Object[]> data = new ArrayList<>();
-        for (int i = 0; i < WritersList.getWriterAdded().size(); i++){
-            data.add(new Object[]{WritersList.getWriterAdded().get(i)});
+        for (int i = 0; i < writersAdded.size(); i++){
+            data.add(new Object[]{writersAdded.get(i)});
         }
         return data.iterator();
+    }
+
+
+    public static int addWriter(Response response){
+        int id = new Gson().fromJson(response.asString(), Writer.class).getWriterId();
+        writersAdded.add(id);
+        return id;
     }
 
 }
