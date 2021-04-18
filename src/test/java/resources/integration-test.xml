@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="integration-test" verbose="1" data-provider-thread-count="1">
+    <!--
+    mvn test -DselectedTests=integration-test
+    -->
+    <test name="integration-test">
+        <classes>
+            <class name="integrationTesting.WriterTest"/>
+            <class name="integrationTesting.PublisherTest"/>
+            <class name="integrationTesting.ReviewTest"/>
+            <class name="integrationTesting.BooksTest"/>
+        </classes>
+    </test>
+    <test name="writer-integration-test">
+        <classes>
+            <class name="integrationTesting.WriterTest"/>
+        </classes>
+    </test>
+    <test name="publisher-integration-test">
+        <classes>
+            <class name="integrationTesting.PublisherTest"/>
+        </classes>
+    </test>
+    <test name="review-integration-test">
+        <classes>
+            <class name="integrationTesting.ReviewTest"/>
+        </classes>
+    </test>
+    <test name="books-integration-test">
+        <classes>
+            <class name="integrationTesting.BooksTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="io.corecode.testing.listeners.MyListener"></listener>
+    </listeners>
+</suite>
