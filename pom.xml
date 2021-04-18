@@ -11,7 +11,6 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-        <selectedTests>integration-test</selectedTests>
     </properties>
 
     <dependencies>
@@ -68,12 +67,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/java/resources/integration-test.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <properties>
-                        <property>
-                            <name>testnames</name>
-                            <value>${selectedTests}</value>
-                        </property>
-                    </properties>
                 </configuration>
             </plugin>
 
