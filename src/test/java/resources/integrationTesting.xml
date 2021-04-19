@@ -13,6 +13,6 @@
     </test>
 
     <listeners>
-        <listener class-name="io.corecode.testing.listeners.MyListener"></listener>
+        <listener class-name="io.corecode.listeners.MyListener"></listener>
     </listeners>
 </suite>
