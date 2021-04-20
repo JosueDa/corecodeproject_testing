@@ -1,14 +1,14 @@
-package io.corecode.systemTesting.userPage;
+package io.corecode.systemTesting.adminPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UserPageActions extends UserPageElements {
+public class AdminPageActions extends AdminPageElements {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public UserPageActions(WebDriver driver, WebDriverWait wait){
+    public AdminPageActions(WebDriver driver, WebDriverWait wait){
         this.driver = driver;
         this.wait = wait;
         PageFactory.initElements(driver,this);
@@ -17,5 +17,10 @@ public class UserPageActions extends UserPageElements {
     public String getMessage() {
         return this.message.getText();
     }
+
+    public void clickManageWriters(){
+        this.manageWriters.click();
+    }
+
 
 }

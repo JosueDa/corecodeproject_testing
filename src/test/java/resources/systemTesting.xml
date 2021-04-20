@@ -5,7 +5,7 @@
     -->
     <test name="systemTesting">
         <classes>
-            <class name="systemTesting.LoginTest"/>
+            <class name="systemTesting.WriterTest"/>
         </classes>
     </test>
 
