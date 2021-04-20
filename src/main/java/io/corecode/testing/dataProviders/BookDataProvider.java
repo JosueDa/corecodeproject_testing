@@ -1,5 +1,6 @@
 package io.corecode.testing.dataProviders;
 import com.google.gson.Gson;
+import io.corecode.testing.model.Book;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
@@ -7,7 +8,6 @@ import org.testng.annotations.DataProvider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import  io.corecode.testing.model.Book;
 import java.util.List;
 
 public class BookDataProvider {
