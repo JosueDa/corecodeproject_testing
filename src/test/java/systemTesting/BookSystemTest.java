@@ -10,7 +10,7 @@ import io.corecode.testing.MyConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BookTest extends InitDriver {
+public class BookSystemTest extends InitDriver {
 
     private AdminPageActions adminActions;
     private LoginPagePageActions loginActions;
@@ -51,6 +51,7 @@ public class BookTest extends InitDriver {
         updateActions.writeCover("Cover example");
         updateActions.writePicture("Picture example");
         updateActions.clickSubmitUpdate();
+        Assert.assertEquals(bookActions.getMessage(),"Book was updated successfully");
 
     }
 
