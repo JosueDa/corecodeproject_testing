@@ -9,6 +9,7 @@
             <class name="integrationTesting.PublisherTest"/>
             <class name="integrationTesting.ReviewTest"/>
             <class name="integrationTesting.BooksTest"/>
+            <class name="integrationTesting.UserTest"/>
         </classes>
     </test>
 
