@@ -6,6 +6,7 @@
     <test name="systemTesting">
         <classes>
             <class name="systemTesting.WriterSystemTest"/>
+            <class name="systemTesting.BookSystemTest"/>
         </classes>
     </test>
 

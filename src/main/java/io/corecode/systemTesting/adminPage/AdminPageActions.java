@@ -22,5 +22,10 @@ public class AdminPageActions extends AdminPageElements {
         this.manageWriters.click();
     }
 
+    public void clickManageBooks(){
+        this.manageBooks.click();
+    }
+
+
 
 }

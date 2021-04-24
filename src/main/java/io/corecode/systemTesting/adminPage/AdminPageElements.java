@@ -9,4 +9,8 @@ public class AdminPageElements {
     @FindBy(id="manageWriters")
     protected WebElement manageWriters;
 
+    @FindBy(id="manageBooks")
+    protected WebElement manageBooks;
+
+
 }
