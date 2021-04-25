@@ -1,7 +1,7 @@
 package io.corecode.testing.dataProviders;
 
 import com.google.gson.Gson;
-import io.corecode.testing.MyConstants;
+import io.corecode.MyConstants;
 import io.corecode.testing.integrationTest.RequestTemplate;
 import io.corecode.testing.model.*;
 import io.restassured.response.Response;

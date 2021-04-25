@@ -6,7 +6,7 @@ import io.corecode.systemTesting.bookPages.bookPages.BookPageActions;
 import io.corecode.systemTesting.bookPages.createBook.BookActions;
 import io.corecode.systemTesting.bookPages.updateBook.UpdateBookActions;
 import io.corecode.systemTesting.loginPage.LoginPagePageActions;
-import io.corecode.testing.MyConstants;
+import io.corecode.MyConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

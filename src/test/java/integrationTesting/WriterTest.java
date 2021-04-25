@@ -1,6 +1,6 @@
 package integrationTesting;
 
-import io.corecode.testing.MyConstants;
+import io.corecode.MyConstants;
 import io.corecode.testing.dataProviders.WriterDataProvider;
 import io.corecode.testing.integrationTest.RequestTemplate;
 import io.restassured.response.Response;

@@ -6,7 +6,7 @@ import io.corecode.systemTesting.loginPage.LoginPagePageActions;
 import io.corecode.systemTesting.writerPages.createWriterPage.CreateWriterPageActions;
 import io.corecode.systemTesting.writerPages.manageWritersPage.ManageWritersPageActions;
 import io.corecode.systemTesting.writerPages.updateWriterPage.EditWriterPageActions;
-import io.corecode.testing.MyConstants;
+import io.corecode.MyConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,6 +23,8 @@ public class WriterSystemTest extends InitDriver {
         login = new LoginPagePageActions(driver, wait);
         login.loginUser("admin", "admin");
         adminPage = new AdminPageActions(driver, wait);
+        String msg = adminPage.getMessage();
+        Assert.assertEquals(msg, "User logged in successfully","User does not exist or credentials are wrong");
         adminPage.clickManageWriters();
         manageWriters = new ManageWritersPageActions(driver, wait);
         manageWriters.clickCreateWriter();
@@ -31,6 +33,20 @@ public class WriterSystemTest extends InitDriver {
         createWriter.clickSubmitCreateWriter();
         String message = createWriter.getMessage();
         Assert.assertEquals(message, "Writer was successfully created");
+        System.out.println("[TEST PASSED] "+ message);
+
+    }
+
+    @Test(priority = 150)
+    public void createEmptyWriter() {
+        driver.get(MyConstants.website+"manageWriters");
+        manageWriters = new ManageWritersPageActions(driver, wait);
+        manageWriters.clickCreateWriter();
+        createWriter = new CreateWriterPageActions(driver, wait);
+        createWriter.enterWriterName("");
+        createWriter.clickSubmitCreateWriter();
+        String message = createWriter.getMessage();
+        Assert.assertEquals(message, "Writer name can not be empty");
         System.out.println("[TEST PASSED] "+ message);
 
     }
