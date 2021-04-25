@@ -1,9 +1,12 @@
 package systemTesting;
 
+import io.corecode.MyConstants;
 import io.corecode.systemTesting.InitDriver;
+import io.corecode.systemTesting.adminPage.AdminPageActions;
 import io.corecode.systemTesting.commonPageActions.LogInAsUser;
 import io.corecode.systemTesting.dataProviders.ReviewDataProvider;
 import io.corecode.systemTesting.loginPage.LoginPagePageActions;
+import io.corecode.systemTesting.manageReviewsPage.ManageReviewsPageActions;
 import io.corecode.systemTesting.userPages.UserPageActions;
 import io.corecode.systemTesting.userPages.addReviewPage.AddReviewPageActions;
 import io.corecode.systemTesting.userPages.myReviewsPage.MyReviewsPageActions;
@@ -17,6 +20,8 @@ public class ReviewSystemTest extends InitDriver {
     private AddReviewPageActions addReview;
     private UpdateReviewPageActions updateReview;
     private MyReviewsPageActions myReviews;
+    private AdminPageActions adminPage;
+    private ManageReviewsPageActions manageReviews;
 
     @Test(priority=100, dataProvider = "getReviews", dataProviderClass = ReviewDataProvider.class)
     public void createReview(String reviewDescription){
@@ -80,6 +85,18 @@ public class ReviewSystemTest extends InitDriver {
         myReviews = new MyReviewsPageActions(driver,wait);
         myReviews.clickLastDeleteLink();
         String message = myReviews.getMessage();
+        Assert.assertEquals(message,"Review was deleted successfully");
+        System.out.println("[TEST PASSED] "+message);
+    }
+
+    @Test(priority = 350)
+    public void deleteReviewAdminPage(){
+        driver.get(MyConstants.website+"manageWriters");
+        adminPage = new AdminPageActions(driver,wait);
+        adminPage.clickManageReviews();
+        manageReviews = new ManageReviewsPageActions(driver,wait);
+        manageReviews.clickLastDeleteLink();
+        String message = manageReviews.getMessage();
         Assert.assertEquals(message,"Review was deleted successfully");
         System.out.println("[TEST PASSED] "+message);
     }

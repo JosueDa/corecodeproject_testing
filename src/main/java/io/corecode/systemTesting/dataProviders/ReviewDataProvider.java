@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class ReviewDataProvider {
-    private int limit=2;
+    private int limit=3;
     @DataProvider(name="getReviews")
     public Iterator<Object[]> getReviews(){
         Collection<Object[]> data = new ArrayList<>();

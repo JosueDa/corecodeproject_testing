@@ -8,9 +8,12 @@ public class AdminPageElements {
     protected WebElement message;
     @FindBy(id="manageWriters")
     protected WebElement manageWriters;
-
     @FindBy(id="manageBooks")
     protected WebElement manageBooks;
+    @FindBy(id="manageReviews")
+    protected WebElement manageReviews;
+
+
 
 
 }
