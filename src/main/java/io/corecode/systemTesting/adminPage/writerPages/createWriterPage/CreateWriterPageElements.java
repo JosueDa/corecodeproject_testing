@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.writerPages.createWriterPage;
+package io.corecode.systemTesting.adminPage.writerPages.createWriterPage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

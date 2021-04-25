@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.writerPages.manageWritersPage;
+package io.corecode.systemTesting.adminPage.writerPages.manageWritersPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

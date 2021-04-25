@@ -1,6 +1,5 @@
-package io.corecode.systemTesting.writerPages.updateWriterPage;
+package io.corecode.systemTesting.adminPage.writerPages.updateWriterPage;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

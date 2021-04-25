@@ -6,7 +6,7 @@ import io.corecode.systemTesting.adminPage.AdminPageActions;
 import io.corecode.systemTesting.commonPageActions.LogInAsUser;
 import io.corecode.systemTesting.dataProviders.ReviewDataProvider;
 import io.corecode.systemTesting.loginPage.LoginPagePageActions;
-import io.corecode.systemTesting.manageReviewsPage.ManageReviewsPageActions;
+import io.corecode.systemTesting.adminPage.manageReviewsPage.ManageReviewsPageActions;
 import io.corecode.systemTesting.userPages.UserPageActions;
 import io.corecode.systemTesting.userPages.addReviewPage.AddReviewPageActions;
 import io.corecode.systemTesting.userPages.myReviewsPage.MyReviewsPageActions;

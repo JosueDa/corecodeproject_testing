@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.manageReviewsPage;
+package io.corecode.systemTesting.adminPage.manageReviewsPage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
