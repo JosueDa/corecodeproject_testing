@@ -2,7 +2,7 @@ package integrationTesting;
 
 import io.corecode.testing.dataProviders.BookDataProvider;
 import io.corecode.testing.integrationTest.RequestTemplate;
-import io.corecode.testing.MyConstants;
+import io.corecode.MyConstants;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
