@@ -14,7 +14,7 @@ public class AddReviewPageElements {
     protected WebElement message;
     @FindBy(id="stars")
     protected WebElement reviewStars;
-    @FindBy(xpath="//a[contains(@id,'update')]")
+    @FindBy(xpath="//a[contains(@href,'updateReview')]")
     protected List<WebElement> updateLinks;
     @FindBy(xpath="//a[contains(@id,'delete')]")
     protected List<WebElement> deleteLinks;
