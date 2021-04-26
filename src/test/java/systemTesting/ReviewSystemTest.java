@@ -23,7 +23,7 @@ public class ReviewSystemTest extends InitDriver {
     private AdminPageActions adminPage;
     private ManageReviewsPageActions manageReviews;
 
-    @Test(priority=100, dataProvider = "getReviews", dataProviderClass = ReviewDataProvider.class)
+    @Test(priority=100, dataProvider = "getReviews", dataProviderClass = ReviewDataProvider.class,groups={"systemTest","reviewSystemTest"})
     public void createReview(String reviewDescription){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickFirstBookLink();
@@ -33,7 +33,7 @@ public class ReviewSystemTest extends InitDriver {
         System.out.println("[TEST PASSED] "+message);
     }
 
-    @Test(priority=150)
+    @Test(priority=150,groups={"systemTest","reviewSystemTest"})
     public void createEmptyReview(){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickFirstBookLink();
@@ -43,7 +43,7 @@ public class ReviewSystemTest extends InitDriver {
         System.out.println("[TEST PASSED] "+message);
     }
 
-    @Test(priority=200)
+    @Test(priority=200,groups={"systemTest","reviewSystemTest"})
     public void updateReviewBookPage(){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickFirstBookLink();
@@ -54,7 +54,7 @@ public class ReviewSystemTest extends InitDriver {
         Assert.assertEquals(message,"Review was updated successfully");
         System.out.println("[TEST PASSED] "+message);
     }
-    @Test(priority=200)
+    @Test(priority=200,groups={"systemTest","reviewSystemTest"})
     public void updateReviewMyReviewsPage(){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickMyReviews();
@@ -66,7 +66,7 @@ public class ReviewSystemTest extends InitDriver {
         System.out.println("[TEST PASSED] "+message);
     }
 
-    @Test(priority = 300)
+    @Test(priority = 300,groups={"systemTest","reviewSystemTest"})
     public void deleteReviewBookPage(){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickFirstBookLink();
@@ -78,7 +78,7 @@ public class ReviewSystemTest extends InitDriver {
     }
 
 
-    @Test(priority = 300)
+    @Test(priority = 300,groups={"systemTest","reviewSystemTest"})
     public void deleteReviewMyReviewsPage(){
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickMyReviews();
@@ -89,7 +89,7 @@ public class ReviewSystemTest extends InitDriver {
         System.out.println("[TEST PASSED] "+message);
     }
 
-    @Test(priority = 350)
+    @Test(priority = 350,groups={"systemTest","reviewSystemTest"})
     public void deleteReviewAdminPage(){
         driver.get(MyConstants.website+"manageWriters");
         adminPage = new AdminPageActions(driver,wait);

@@ -17,7 +17,7 @@ public class WriterSystemTest extends InitDriver {
     private CreateWriterPageActions createWriter;
     private EditWriterPageActions editWriter;
 
-    @Test(priority = 100)
+    @Test(priority = 100,groups={"systemTest","writerSystemTest"})
     public void createWriter() {
         driver.get(MyConstants.website + "login");
         login = new LoginPagePageActions(driver, wait);
@@ -37,7 +37,7 @@ public class WriterSystemTest extends InitDriver {
 
     }
 
-    @Test(priority = 150)
+    @Test(priority = 150,groups={"systemTest","writerSystemTest"})
     public void createEmptyWriter() {
         driver.get(MyConstants.website+"manageWriters");
         manageWriters = new ManageWritersPageActions(driver, wait);
@@ -51,7 +51,7 @@ public class WriterSystemTest extends InitDriver {
 
     }
 
-    @Test(priority = 200, dependsOnMethods = {"createWriter"})
+    @Test(priority = 200, dependsOnMethods = {"createWriter"},groups={"systemTest","writerSystemTest"})
     public void updateWriter(){
         driver.get(MyConstants.website+"manageWriters");
         manageWriters = new ManageWritersPageActions(driver, wait);
@@ -64,7 +64,7 @@ public class WriterSystemTest extends InitDriver {
         System.out.println("[TEST PASSED] "+ message);
     }
 
-    @Test(priority = 300, dependsOnMethods = {"createWriter"})
+    @Test(priority = 300, dependsOnMethods = {"createWriter"},groups={"systemTest","writerSystemTest"})
     public void deleteWriter() {
         driver.get(MyConstants.website + "manageWriters");
         manageWriters = new ManageWritersPageActions(driver, wait);
