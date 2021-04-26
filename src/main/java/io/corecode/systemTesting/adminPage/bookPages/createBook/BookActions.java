@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.bookPages.createBook;
+package io.corecode.systemTesting.adminPage.bookPages.createBook;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

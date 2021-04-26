@@ -12,6 +12,11 @@ public class AdminPageElements {
     protected WebElement manageBooks;
     @FindBy(id="manageReviews")
     protected WebElement manageReviews;
+    @FindBy(id="manageUsers")
+    protected WebElement manageUsers;
+    @FindBy(id="managePublishers")
+    protected WebElement managePublishers;
+
 
 
 

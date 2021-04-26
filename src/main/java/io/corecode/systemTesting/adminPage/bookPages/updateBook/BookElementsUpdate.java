@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.bookPages.updateBook;
+package io.corecode.systemTesting.adminPage.bookPages.updateBook;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

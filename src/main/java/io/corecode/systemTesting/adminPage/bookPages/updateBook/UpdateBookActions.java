@@ -1,15 +1,12 @@
-package io.corecode.systemTesting.bookPages.updateBook;
+package io.corecode.systemTesting.adminPage.bookPages.updateBook;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.swing.*;
 
 public class UpdateBookActions extends BookElementsUpdate {
 

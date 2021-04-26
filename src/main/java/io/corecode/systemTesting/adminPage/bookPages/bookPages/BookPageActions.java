@@ -1,4 +1,4 @@
-package io.corecode.systemTesting.bookPages.bookPages;
+package io.corecode.systemTesting.adminPage.bookPages.bookPages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

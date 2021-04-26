@@ -34,7 +34,12 @@ public class AdminPageActions extends AdminPageElements {
         wait.until(ExpectedConditions.visibilityOf(this.manageReviews));
         this.manageReviews.click();
     }
-
-
-
+    public void clickManageUser(){
+        wait.until(ExpectedConditions.visibilityOf(this.manageUsers));
+        this.manageUsers.click();
+    }
+    public void clickManagePublisher(){
+        wait.until(ExpectedConditions.visibilityOf(this.managePublishers));
+        this.managePublishers.click();
+    }
 }
