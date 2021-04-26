@@ -11,6 +11,9 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+        <browser>chrome</browser>
+        <apiUrl>http://myapi-env.eba-3me5caza.us-east-2.elasticbeanstalk.com/</apiUrl>
+        <webUrl>http://mywebsite2-env.eba-yihsxqmu.us-east-2.elasticbeanstalk.com/</webUrl>
     </properties>
 
     <dependencies>
@@ -58,16 +61,41 @@
     <build>
 
         <plugins>
-            <!-- Following plugin executes the testng tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/resources/integrationTesting.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/java/resources/systemTesting.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <property>
+                            <name>browser</name>
+                            <value>${browser}</value>
+                        </property>
+                        <property>
+                            <name>webUrl</name>
+                            <value>${webUrl}</value>
+                        </property>
+                        <property>
+                            <name>apiUrl</name>
+                            <value>${apiUrl}</value>
+                        </property>
+                    </systemPropertyVariables>
+                    <properties>
+                        <property>
+                            <name>usedefaultlisteners</name>
+                            <value>false</value> <!-- disabling default listeners is optional -->
+                        </property>
+                        <property>
+                            <name>listener</name>
+                            <value>io.corecode.listeners.MyListener</value>
+                        </property>
+                        <!--
+                        <property>
+                            <name>reporter</name>
+                            <value>listenReport.Reporter</value>
+                        </property>
+                        -->
+                    </properties>
                 </configuration>
             </plugin>
 
