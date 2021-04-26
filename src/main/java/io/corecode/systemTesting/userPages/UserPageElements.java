@@ -12,4 +12,6 @@ public class UserPageElements {
     protected List<WebElement> bookLinks;
     @FindBy(id="myReviews")
     protected WebElement myReviews;
+    @FindBy(id="updateMyInformation")
+    protected WebElement updateMyInformation;
 }

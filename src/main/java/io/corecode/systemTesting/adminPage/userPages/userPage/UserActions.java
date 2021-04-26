@@ -1,25 +1,18 @@
-package io.corecode.systemTesting.adminPage.publisherPages.publisherPage;
+package io.corecode.systemTesting.adminPage.userPages.userPage;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PublisherActions extends PublisherElements{
+public class UserActions extends UserElements {
 
-    public PublisherActions(WebDriver driver, WebDriverWait wait) {
+    public UserActions(WebDriver driver, WebDriverWait wait) {
 
         this.driver=driver;
         this.wait=wait;
         PageFactory.initElements(driver,this);
-    }
-
-    public void clickCreateButton(){
-        wait.until(ExpectedConditions.visibilityOfAllElements(this.createButton));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",createButton);
     }
 
     public void clickUpdate(){

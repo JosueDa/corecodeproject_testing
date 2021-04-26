@@ -26,5 +26,10 @@ public class UserPageActions extends UserPageElements{
         wait.until(ExpectedConditions.visibilityOf(this.myReviews));
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", this.myReviews);
     }
+    public void clickChangeAccountInformation(){
+        wait.until(ExpectedConditions.visibilityOf(this.updateMyInformation));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", this.updateMyInformation);
+    }
+
 
 }

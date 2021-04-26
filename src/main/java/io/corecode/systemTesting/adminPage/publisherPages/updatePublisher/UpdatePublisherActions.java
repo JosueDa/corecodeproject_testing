@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UpdatePublisherActions extends UpdatePublisherElements {
 
-    public UpdatePublisherActions(WebDriver driver, Wait wait) {
+    public UpdatePublisherActions(WebDriver driver, WebDriverWait wait) {
         this.driver=driver;
         this.wait=wait;
         PageFactory.initElements(driver,this);

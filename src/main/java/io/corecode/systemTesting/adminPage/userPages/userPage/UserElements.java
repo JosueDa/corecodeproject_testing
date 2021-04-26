@@ -1,20 +1,16 @@
-package io.corecode.systemTesting.adminPage.publisherPages.publisherPage;
+package io.corecode.systemTesting.adminPage.userPages.userPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class PublisherElements {
+public class UserElements {
 
     WebDriver driver;
     WebDriverWait wait;
-
-    @FindBy(xpath = "//a[text()='Create Publisher']")
-    WebElement createButton;
 
     @FindBy(id = "message")
     WebElement message;

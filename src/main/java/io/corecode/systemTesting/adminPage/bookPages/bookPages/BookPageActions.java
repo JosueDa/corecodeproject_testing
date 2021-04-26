@@ -5,10 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BookPageActions extends BookPageElements {
 
-    public BookPageActions(WebDriver driver, Wait wait){
+    public BookPageActions(WebDriver driver, WebDriverWait wait){
         this.driver=driver;
         this.wait=wait;
         PageFactory.initElements(driver,this);
