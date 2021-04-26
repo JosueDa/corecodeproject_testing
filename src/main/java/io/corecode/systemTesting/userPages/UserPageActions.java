@@ -23,7 +23,8 @@ public class UserPageActions extends UserPageElements{
         //this.bookLinks.get(0).click();
     }
     public void clickMyReviews(){
-        this.myReviews.click();
+        wait.until(ExpectedConditions.visibilityOf(this.myReviews));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", this.myReviews);
     }
 
 }

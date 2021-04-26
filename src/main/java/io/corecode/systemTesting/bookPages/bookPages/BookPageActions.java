@@ -1,5 +1,6 @@
 package io.corecode.systemTesting.bookPages.bookPages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,14 +20,19 @@ public class BookPageActions extends BookPageElements {
     }
 
     public String getMessage(){
+        wait.until(ExpectedConditions.visibilityOf(this.message));
         return message.getText();
     }
 
     public void clickDeleteLink(){
-        deleteLinks.get(deleteLinks.size()-1).click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(this.deleteLinks));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",deleteLinks.get(deleteLinks.size()-1));
+        //deleteLinks.get(deleteLinks.size()-1).click();
     }
 
     public void clickUpdateLink(){
-        updateLinks.get(updateLinks.size()-1).click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(this.updateLinks));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",updateLinks.get(updateLinks.size()-1));
+        //updateLinks.get(updateLinks.size()-1).click();
     }
 }
