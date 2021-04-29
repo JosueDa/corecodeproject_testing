@@ -26,7 +26,8 @@ public class UpdateAccountActions extends UpdateAccountElements {
         j.executeScript("arguments[0].value='"+text+"';",password);
     }
     public void clickSubmitUpdateAccount(){
-        submitUpdateInformation.submit();
+        wait.until(ExpectedConditions.visibilityOf(this.submitUpdateInformation));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",this.submitUpdateInformation);
     }
 
     public String getMessage(){

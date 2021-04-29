@@ -1,7 +1,9 @@
 package io.corecode.systemTesting.userPages.userAccount.createUserAccount;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAccountActions extends CreateAccountElements {
@@ -22,7 +24,9 @@ public class CreateAccountActions extends CreateAccountElements {
     }
 
     public void clickSubmitCreateAccount(){
-        submitCreateAccount.submit();
+        wait.until(ExpectedConditions.visibilityOf(this.submitCreateAccount));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",this.submitCreateAccount);
+        //submitCreateAccount.submit();
     }
 
     public String getMessage(){
