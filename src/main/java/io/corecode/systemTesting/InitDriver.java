@@ -14,6 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 
+import java.io.File;
 import java.net.URL;
 
 
@@ -102,6 +103,13 @@ public class InitDriver {
         }else if(operativeSystem.contains("windows")){
             geckoDriver = "drivers/windows/geckodriver.exe";
             chromeDriver = "drivers/windows/chromedriver.exe";
+        }else if(operativeSystem.contains("linux")){
+            geckoDriver = "drivers/windows/geckodriver.exe";
+            chromeDriver = "drivers/linux/chromedriver";
+            File file = new File(chromeDriver);
+            file.setExecutable(true);
+            file = new File(geckoDriver);
+            file.setExecutable(true);
         }
     }
 
