@@ -1,5 +1,6 @@
 package io.corecode.systemTesting.adminPage.writerPages.manageWritersPage;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -20,13 +21,12 @@ public class ManageWritersPageActions extends ManageWritersPageElements{
 
     public void clickLastEditLink(){
         wait.until(ExpectedConditions.visibilityOfAllElements(this.editLinks));
-        WebElement lastLink = this.editLinks.get(this.editLinks.size()-1);
-        wait.until(ExpectedConditions.elementToBeClickable(lastLink));
-        lastLink.click();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",this.editLinks.get(this.editLinks.size()-1));
     }
 
     public void clickLastDeleteLink(){
-        this.deleteLinks.get(this.deleteLinks.size()-1).click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(this.deleteLinks));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click()",this.deleteLinks.get(this.deleteLinks.size()-1));
     }
 
     public String getMessage(){
