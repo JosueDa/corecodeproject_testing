@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.regex.Pattern;
+
 public class UpdateBookActions extends BookElementsUpdate {
 
     public UpdateBookActions(WebDriver driver, WebDriverWait wait){
@@ -46,6 +48,8 @@ public class UpdateBookActions extends BookElementsUpdate {
     }
 
     public String getMessage(){
+        wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
+
         return message.getText();
     }
 }

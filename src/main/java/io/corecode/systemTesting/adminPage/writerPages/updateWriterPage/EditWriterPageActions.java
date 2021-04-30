@@ -1,10 +1,13 @@
 package io.corecode.systemTesting.adminPage.writerPages.updateWriterPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.regex.Pattern;
 
 public class EditWriterPageActions extends EditWriterPageElements{
     private WebDriver driver;
@@ -15,6 +18,8 @@ public class EditWriterPageActions extends EditWriterPageElements{
         PageFactory.initElements(driver,this);
     }
     public String getMessage(){
+        wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
+
         //new WebDriverWait(driver,5).until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
         wait.until(ExpectedConditions.visibilityOf(this.message));
         return this.message.getText();

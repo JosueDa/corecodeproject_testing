@@ -1,9 +1,12 @@
 package io.corecode.systemTesting.adminPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.regex.Pattern;
 
 public class AdminPageActions extends AdminPageElements {
     private WebDriver driver;
@@ -16,6 +19,7 @@ public class AdminPageActions extends AdminPageElements {
     }
 
     public String getMessage() {
+        wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
         wait.until(ExpectedConditions.visibilityOf(this.message));
         return this.message.getText();
     }

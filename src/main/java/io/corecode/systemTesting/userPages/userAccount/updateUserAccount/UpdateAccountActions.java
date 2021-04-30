@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.regex.Pattern;
+
 public class UpdateAccountActions extends UpdateAccountElements {
 
     public UpdateAccountActions(WebDriver driver, WebDriverWait wait) {
@@ -31,6 +33,7 @@ public class UpdateAccountActions extends UpdateAccountElements {
     }
 
     public String getMessage(){
+        wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
         return message.getText();
     }
 }

@@ -1,10 +1,13 @@
 package io.corecode.systemTesting.userPages.updateReviewPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.regex.Pattern;
 
 public class UpdateReviewPageActions extends UpdateReviewPageElements{
     private WebDriver driver;
@@ -29,6 +32,8 @@ public class UpdateReviewPageActions extends UpdateReviewPageElements{
         this.submitUpdateReview.click();
     }
     public String getMessage() {
+        wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
+
         return this.message.getText();
     }
 
