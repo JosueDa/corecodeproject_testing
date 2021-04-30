@@ -50,12 +50,15 @@ public class ReviewSystemTest extends InitDriver {
         userPage = new LogInAsUser(driver,wait).logRegularUser("user","user");
         userPage.clickFirstBookLink();
         System.out.println("[DEBUG] clicked on first book");
+        try{Thread.sleep(2000);}catch(Exception e){}
         addReview = new AddReviewPageActions(driver,wait);
         addReview.clickLastUpdateLink();
         System.out.println("[DEBUG] clicked on update link of last review");
+        try{Thread.sleep(2000);}catch(Exception e){}
         updateReview = new UpdateReviewPageActions(driver,wait);
         String message = updateReview.updateReview(3,"test qa update 0");
         System.out.println("[DEBUG] enter stars, description and get message");
+        try{Thread.sleep(2000);}catch(Exception e){}
         Assert.assertEquals(message,"Review was updated successfully");
         System.out.println("[TEST PASSED] "+message);
     }
