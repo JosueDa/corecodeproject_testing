@@ -22,6 +22,7 @@ public class AddReviewPageActions extends AddReviewPageElements{
     }
 
     public void enterReviewDescription(String description){
+        wait.until(ExpectedConditions.visibilityOf(this.reviewDescription));
         this.reviewDescription.sendKeys(description);
     }
 
