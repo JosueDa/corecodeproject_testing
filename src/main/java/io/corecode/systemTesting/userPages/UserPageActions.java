@@ -18,6 +18,7 @@ public class UserPageActions extends UserPageElements{
         PageFactory.initElements(driver,this);
     }
     public String getMessage() {
+        wait.until(ExpectedConditions.visibilityOf(this.message));
         //wait.until(ExpectedConditions.textMatches(By.id("message"), Pattern.compile("\\S")));
         return this.message.getText();
     }
