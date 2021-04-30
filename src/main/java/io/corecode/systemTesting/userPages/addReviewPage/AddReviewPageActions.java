@@ -37,9 +37,11 @@ public class AddReviewPageActions extends AddReviewPageElements{
     }
 
     public void setReviewStars(int stars){
+        /*
         wait.until(ExpectedConditions.visibilityOf(this.reviewStars));
         Select starsReview = new Select(this.reviewStars);
         starsReview.selectByValue(String.valueOf(stars));
+        */
     }
 
     public void clickLastUpdateLink(){

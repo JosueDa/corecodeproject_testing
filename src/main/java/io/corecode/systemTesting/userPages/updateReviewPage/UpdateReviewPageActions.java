@@ -18,10 +18,13 @@ public class UpdateReviewPageActions extends UpdateReviewPageElements{
         PageFactory.initElements(driver,this);
     }
     public void setStars(int stars){
+        /*
         wait.until(ExpectedConditions.visibilityOf(this.reviewStars));
         Select starsReview = new Select(this.reviewStars);
         starsReview.selectByValue(String.valueOf(stars));
+        */
     }
+
     public void enterDescription(String description){
         wait.until(ExpectedConditions.visibilityOf(this.reviewDescription));
         this.reviewDescription.clear();
