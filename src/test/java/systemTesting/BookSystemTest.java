@@ -59,7 +59,7 @@ public class BookSystemTest extends InitDriver {
     public void deleteBook() throws Exception{
         driver.get(MyConstants.website + "login");
         loginActions = new LoginPagePageActions(driver, wait);
-        loginActions.loginUser("admin", "admin");
+        loginActions.loginUser("admi", "admin");
         adminActions = new AdminPageActions(driver, wait);
         adminActions.clickManageBooks();
         pageActions = new BookPageActions(driver, wait);

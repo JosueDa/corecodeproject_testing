@@ -10,7 +10,6 @@ import io.corecode.systemTesting.loginPage.LoginPagePageActions;
 import io.corecode.systemTesting.userPages.UserPageActions;
 import io.corecode.systemTesting.userPages.userAccount.createUserAccount.CreateAccountActions;
 import io.corecode.systemTesting.userPages.userAccount.updateUserAccount.UpdateAccountActions;
-import io.corecode.systemTesting.userPages.userAccount.updateUserAccount.UpdateAccountElements;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -37,7 +37,7 @@ public class WriterSystemTest extends InitDriver {
 
     }
 
-    @Test(priority = 150,groups={"systemTest","writerSystemTest"})
+    @Test(priority = 150,groups={"systemTest","writerSystemTest"},description = "")
     public void createEmptyWriter() {
         driver.get(MyConstants.website+"manageWriters");
         manageWriters = new ManageWritersPageActions(driver, wait);
